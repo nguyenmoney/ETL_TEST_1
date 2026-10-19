@@ -1,0 +1,1 @@
+{"_invocation_id": "07248735-8496-4d69-9114-2f6ccdf3b58a", "linked": {"0": {"name": "source.nyc_pipeline.raw.yellow_trips", "type": "source", "succ": [1, 2]}, "1": {"name": "model.nyc_pipeline.bronze_yellow_trips", "type": "model"}, "2": {"name": "test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58", "type": "test"}}}

@@ -1,0 +1,12 @@
+nyc_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5433
+      user: admin
+      password: admin
+      dbname: nyc_taxi
+      schema: public
+      threads: 2

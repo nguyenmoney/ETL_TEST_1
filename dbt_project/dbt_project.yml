@@ -1,0 +1,14 @@
+name: nyc_pipeline
+version: "1.0.0"
+profile: nyc_pipeline
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+vars:
+  batch_month: "2024-01"
+
+models:
+  nyc_pipeline:
+    bronze:
+      +schema: bronze

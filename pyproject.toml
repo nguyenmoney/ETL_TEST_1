@@ -1,0 +1,22 @@
+[project]
+name = "nyc-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Loc.NT_HUST", email = "nguyentienloc2469@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dbt-postgres>=1.11.0",
+    "psycopg[binary]>=3.3.6",
+    "pyarrow>=26.0.0",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+nyc-pipeline = "nyc_pipeline:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"

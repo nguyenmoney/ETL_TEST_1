@@ -1,0 +1,669 @@
+[0m18:07:50.816797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029CBF913B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029CBF830170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029CBDAF13A0>]}
+
+
+============================== 18:07:50.816797 | 52dd9190-3e23-4b15-a484-d18956424779 ==============================
+[0m18:07:50.816797 [info ] [MainThread]: Running with dbt=1.12.6
+[0m18:07:50.816797 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt debug --profiles-dir .', 'log_path': 'C:\\Users\\Admin\\Documents\\nyc-pipeline\\dbt_project\\logs'}
+[0m18:07:50.893686 [info ] [MainThread]: dbt version: 1.12.6
+[0m18:07:50.897921 [info ] [MainThread]: python version: 3.12.15
+[0m18:07:50.897921 [info ] [MainThread]: python path: C:\Users\Admin\Documents\nyc-pipeline\.venv\Scripts\python.exe
+[0m18:07:50.897921 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m18:07:50.936413 [info ] [MainThread]: Using profiles dir at .
+[0m18:07:50.936413 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m18:07:50.937461 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Admin\Documents\nyc-pipeline\dbt_project\dbt_project.yml
+[0m18:07:50.938587 [info ] [MainThread]: adapter type: postgres
+[0m18:07:50.938587 [info ] [MainThread]: adapter version: 1.11.0
+[0m18:07:50.993103 [info ] [MainThread]: Configuration:
+[0m18:07:50.993103 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:07:50.993103 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:07:50.993103 [info ] [MainThread]: Required dependencies:
+[0m18:07:50.993103 [debug] [MainThread]: Executing "git --help"
+[0m18:07:51.024591 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:07:51.025734 [debug] [MainThread]: STDERR: "b''"
+[0m18:07:51.025734 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:07:51.026739 [info ] [MainThread]: Connection:
+[0m18:07:51.026739 [info ] [MainThread]:   host: localhost
+[0m18:07:51.026739 [info ] [MainThread]:   port: 5433
+[0m18:07:51.027693 [info ] [MainThread]:   user: admin
+[0m18:07:51.027693 [info ] [MainThread]:   database: nyc_taxi
+[0m18:07:51.027693 [info ] [MainThread]:   schema: public
+[0m18:07:51.027693 [info ] [MainThread]:   connect_timeout: 10
+[0m18:07:51.028918 [info ] [MainThread]:   role: None
+[0m18:07:51.028918 [info ] [MainThread]:   search_path: None
+[0m18:07:51.028918 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:07:51.030130 [info ] [MainThread]:   sslmode: None
+[0m18:07:51.030130 [info ] [MainThread]:   sslcert: None
+[0m18:07:51.030130 [info ] [MainThread]:   sslkey: None
+[0m18:07:51.030130 [info ] [MainThread]:   sslrootcert: None
+[0m18:07:51.031136 [info ] [MainThread]:   application_name: dbt
+[0m18:07:51.031136 [info ] [MainThread]:   autocommit: False
+[0m18:07:51.031136 [info ] [MainThread]:   retries: 1
+[0m18:07:51.032429 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:07:51.170739 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:07:51.320449 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:07:51.321453 [debug] [MainThread]: On debug: select 1 as id
+[0m18:07:51.321453 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:07:51.338563 [debug] [MainThread]: SQL status: SELECT 1 in 0.018 seconds
+[0m18:07:51.340458 [debug] [MainThread]: On debug: Close
+[0m18:07:51.340458 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:07:51.340458 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:07:51.342726 [debug] [MainThread]: Command `dbt debug` succeeded at 18:07:51.340458 after 0.68 seconds
+[0m18:07:51.342726 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:07:51.342726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029CBBAAE5D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029CBFB8BB60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029CBD625F40>]}
+[0m18:07:51.342726 [debug] [MainThread]: Flushing usage events
+[0m18:07:52.509250 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:08:02.721131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC88DF2F60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8B578800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8B2A5E20>]}
+
+
+============================== 18:08:02.737022 | d3d781c4-ab60-4e42-818d-3aae9ed5fae4 ==============================
+[0m18:08:02.737022 [info ] [MainThread]: Running with dbt=1.12.6
+[0m18:08:02.737022 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'log_path': 'C:\\Users\\Admin\\Documents\\nyc-pipeline\\dbt_project\\logs'}
+[0m18:08:02.847388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8D6B4710>]}
+[0m18:08:02.890436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8D8D2060>]}
+[0m18:08:02.890436 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:08:03.041479 [debug] [MainThread]: checksum: 04c854bd08887aac9be3ae808399a08db7cccb5addf5d4cdf280cf9505154b28, vars: {}, profile: nyc_pipeline, target: dev, version: 1.12.6
+[0m18:08:03.042725 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:08:03.043723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8D800320>]}
+[0m18:08:03.882616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8DF1A7B0>]}
+[0m18:08:03.947750 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\manifest.json
+[0m18:08:03.957596 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\semantic_manifest.json
+[0m18:08:04.026528 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\osi_document.json
+[0m18:08:04.058117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8DFB2B70>]}
+[0m18:08:04.058117 [info ] [MainThread]: Found 1 model, 1 test, 1 source, 478 macros
+[0m18:08:04.058117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8B16F4A0>]}
+[0m18:08:04.061107 [info ] [MainThread]: 
+[0m18:08:04.061107 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:08:04.061107 [info ] [MainThread]: 
+[0m18:08:04.061107 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:08:04.061107 [debug] [ThreadPool]: Acquiring new postgres connection 'list_nyc_taxi'
+[0m18:08:04.104182 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi"
+[0m18:08:04.104182 [debug] [ThreadPool]: On list_nyc_taxi: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "list_nyc_taxi"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:08:04.104182 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:08:04.136440 [debug] [ThreadPool]: SQL status: SELECT 8 in 0.018 seconds
+[0m18:08:04.138445 [debug] [ThreadPool]: On list_nyc_taxi: Close
+[0m18:08:04.138445 [debug] [ThreadPool]: Acquiring new postgres connection 'list_nyc_taxi_bronze'
+[0m18:08:04.138445 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_bronze"
+[0m18:08:04.138445 [debug] [ThreadPool]: On list_nyc_taxi_bronze: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "list_nyc_taxi_bronze"} */
+select
+      'nyc_taxi' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'bronze'
+    union all
+    select
+      'nyc_taxi' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'bronze'
+    union all
+    select
+      'nyc_taxi' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'bronze'
+    union all
+    select distinct
+     'nyc_taxi' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'bronze'
+  
+[0m18:08:04.138445 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:08:04.171216 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.028 seconds
+[0m18:08:04.171216 [debug] [ThreadPool]: On list_nyc_taxi_bronze: ROLLBACK
+[0m18:08:04.173223 [debug] [ThreadPool]: On list_nyc_taxi_bronze: Close
+[0m18:08:04.174743 [debug] [MainThread]: Using postgres connection "master"
+[0m18:08:04.174743 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:08:04.176749 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:08:04.199433 [debug] [MainThread]: SQL status: SELECT 0 in 0.035 seconds
+[0m18:08:04.199433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8DF90260>]}
+[0m18:08:04.199433 [debug] [MainThread]: On master: ROLLBACK
+[0m18:08:04.199433 [debug] [MainThread]: On master: COMMIT
+[0m18:08:04.199433 [debug] [MainThread]: Using postgres connection "master"
+[0m18:08:04.199433 [debug] [MainThread]: On master: COMMIT
+[0m18:08:04.215391 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m18:08:04.215391 [debug] [MainThread]: On master: Close
+[0m18:08:04.217602 [debug] [Thread-1 (]: Began running node model.nyc_pipeline.bronze_yellow_trips
+[0m18:08:04.217602 [info ] [Thread-1 (]: 1 of 1 START sql incremental model bronze.bronze_yellow_trips .................. [RUN]
+[0m18:08:04.217602 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.nyc_pipeline.bronze_yellow_trips'
+[0m18:08:04.217602 [debug] [Thread-1 (]: Began compiling node model.nyc_pipeline.bronze_yellow_trips
+[0m18:08:04.217602 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:08:04.231206 [debug] [Thread-1 (]: Began executing node model.nyc_pipeline.bronze_yellow_trips
+[0m18:08:04.263405 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:08:04.273335 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:08:04.273335 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "node_id": "model.nyc_pipeline.bronze_yellow_trips"} */
+
+      
+  
+    
+
+  create  table "nyc_taxi"."bronze"."bronze_yellow_trips"
+  
+  
+    as
+  
+  (
+    
+
+select
+    *,
+    'raw.yellow_trips'  as _source_table,
+    current_timestamp   as _ingested_at
+from "nyc_taxi"."raw"."yellow_trips"
+where source_month = '2024-01'
+  );
+  
+  
+[0m18:08:04.273335 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:08:08.674221 [debug] [Thread-1 (]: SQL status: SELECT 2964624 in 4.400 seconds
+[0m18:08:08.686079 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: COMMIT
+[0m18:08:08.686079 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:08:08.686079 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: COMMIT
+[0m18:08:08.686079 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m18:08:08.686079 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: Close
+[0m18:08:08.692454 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd3d781c4-ab60-4e42-818d-3aae9ed5fae4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8DF9F980>]}
+[0m18:08:08.692454 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model bronze.bronze_yellow_trips ............. [[32mSELECT 2964624[0m in 4.47s]
+[0m18:08:08.695658 [debug] [Thread-1 (]: Finished running node model.nyc_pipeline.bronze_yellow_trips
+[0m18:08:08.695658 [debug] [MainThread]: On master: COMMIT
+[0m18:08:08.695658 [debug] [MainThread]: Using postgres connection "master"
+[0m18:08:08.695658 [debug] [MainThread]: On master: COMMIT
+[0m18:08:08.695658 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:08:08.700189 [debug] [MainThread]: SQL status: COMMIT in 0.009 seconds
+[0m18:08:08.700189 [debug] [MainThread]: On master: Close
+[0m18:08:08.700189 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:08:08.700189 [debug] [MainThread]: Connection 'list_nyc_taxi' was properly closed.
+[0m18:08:08.700189 [debug] [MainThread]: Connection 'list_nyc_taxi_bronze' was properly closed.
+[0m18:08:08.700189 [debug] [MainThread]: Connection 'model.nyc_pipeline.bronze_yellow_trips' was properly closed.
+[0m18:08:08.700189 [info ] [MainThread]: 
+[0m18:08:08.700189 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 4.64 seconds (4.64s).
+[0m18:08:08.700189 [debug] [MainThread]: Command end result
+[0m18:08:08.728312 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\manifest.json
+[0m18:08:08.729719 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\semantic_manifest.json
+[0m18:08:08.729719 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\osi_document.json
+[0m18:08:08.739748 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\run_results.json
+[0m18:08:08.739748 [info ] [MainThread]: 
+[0m18:08:08.739748 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:08:08.739748 [info ] [MainThread]: 
+[0m18:08:08.741056 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+[0m18:08:08.742371 [debug] [MainThread]: Command `dbt run` succeeded at 18:08:08.742064 after 6.11 seconds
+[0m18:08:08.742371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC895A4110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8B8DB170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BC8B8D9A00>]}
+[0m18:08:08.742371 [debug] [MainThread]: Flushing usage events
+[0m18:08:09.950108 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:08:11.636601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE25C2C950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE26C6DCA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE25CF6210>]}
+
+
+============================== 18:08:11.641822 | 3848fa02-bbad-447c-a2dc-65623892d119 ==============================
+[0m18:08:11.641822 [info ] [MainThread]: Running with dbt=1.12.6
+[0m18:08:11.642362 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt test --profiles-dir .', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\Admin\\Documents\\nyc-pipeline\\dbt_project\\logs'}
+[0m18:08:11.750727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3848fa02-bbad-447c-a2dc-65623892d119', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE25C2C950>]}
+[0m18:08:11.792388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3848fa02-bbad-447c-a2dc-65623892d119', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE26724080>]}
+[0m18:08:11.792388 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:08:11.927379 [debug] [MainThread]: checksum: 04c854bd08887aac9be3ae808399a08db7cccb5addf5d4cdf280cf9505154b28, vars: {}, profile: nyc_pipeline, target: dev, version: 1.12.6
+[0m18:08:12.038071 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:08:12.038071 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m18:08:12.038071 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:08:12.038071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3848fa02-bbad-447c-a2dc-65623892d119', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE2B1240B0>]}
+[0m18:08:12.117317 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\manifest.json
+[0m18:08:12.132989 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\semantic_manifest.json
+[0m18:08:12.148668 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\osi_document.json
+[0m18:08:12.244206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3848fa02-bbad-447c-a2dc-65623892d119', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE2B54F8C0>]}
+[0m18:08:12.244206 [info ] [MainThread]: Found 1 model, 1 test, 1 source, 478 macros
+[0m18:08:12.244206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3848fa02-bbad-447c-a2dc-65623892d119', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE2B5226F0>]}
+[0m18:08:12.244206 [info ] [MainThread]: 
+[0m18:08:12.244206 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:08:12.244206 [info ] [MainThread]: 
+[0m18:08:12.244206 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:08:12.244206 [debug] [ThreadPool]: Acquiring new postgres connection 'list_nyc_taxi_bronze'
+[0m18:08:12.346728 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_bronze"
+[0m18:08:12.346728 [debug] [ThreadPool]: On list_nyc_taxi_bronze: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "list_nyc_taxi_bronze"} */
+select
+      'nyc_taxi' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'bronze'
+    union all
+    select
+      'nyc_taxi' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'bronze'
+    union all
+    select
+      'nyc_taxi' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'bronze'
+    union all
+    select distinct
+     'nyc_taxi' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'bronze'
+  
+[0m18:08:12.346728 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:08:12.374841 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.029 seconds
+[0m18:08:12.374841 [debug] [ThreadPool]: On list_nyc_taxi_bronze: ROLLBACK
+[0m18:08:12.374841 [debug] [ThreadPool]: On list_nyc_taxi_bronze: Close
+[0m18:08:12.390790 [debug] [MainThread]: Using postgres connection "master"
+[0m18:08:12.390790 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:08:12.391294 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:08:12.392324 [debug] [MainThread]: SQL status: SELECT 0 in 0.011 seconds
+[0m18:08:12.392324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3848fa02-bbad-447c-a2dc-65623892d119', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE2C9EBD40>]}
+[0m18:08:12.392324 [debug] [MainThread]: On master: ROLLBACK
+[0m18:08:12.392324 [debug] [MainThread]: On master: COMMIT
+[0m18:08:12.392324 [debug] [MainThread]: Using postgres connection "master"
+[0m18:08:12.392324 [debug] [MainThread]: On master: COMMIT
+[0m18:08:12.406043 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m18:08:12.406043 [debug] [MainThread]: On master: Close
+[0m18:08:12.406043 [debug] [Thread-1 (]: Began running node test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58
+[0m18:08:12.406043 [info ] [Thread-1 (]: 1 of 1 START test source_not_null_raw_yellow_trips_source_month ................ [RUN]
+[0m18:08:12.406043 [debug] [Thread-1 (]: Acquiring new postgres connection 'test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58'
+[0m18:08:12.406043 [debug] [Thread-1 (]: Began compiling node test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58
+[0m18:08:12.423716 [debug] [Thread-1 (]: Writing injected SQL for node "test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58"
+[0m18:08:12.424195 [debug] [Thread-1 (]: Began executing node test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58
+[0m18:08:12.430099 [debug] [Thread-1 (]: Writing runtime sql for node "test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58"
+[0m18:08:12.436412 [debug] [Thread-1 (]: Using postgres connection "test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58"
+[0m18:08:12.437419 [debug] [Thread-1 (]: On test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "node_id": "test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_month
+from "nyc_taxi"."raw"."yellow_trips"
+where source_month is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:08:12.437419 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:08:12.546323 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.109 seconds
+[0m18:08:12.546323 [debug] [Thread-1 (]: On test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58: ROLLBACK
+[0m18:08:12.546323 [debug] [Thread-1 (]: On test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58: Close
+[0m18:08:12.546323 [info ] [Thread-1 (]: 1 of 1 PASS source_not_null_raw_yellow_trips_source_month ...................... [[32mPASS[0m in 0.14s]
+[0m18:08:12.546323 [debug] [Thread-1 (]: Finished running node test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58
+[0m18:08:12.546323 [debug] [MainThread]: On master: COMMIT
+[0m18:08:12.546323 [debug] [MainThread]: Using postgres connection "master"
+[0m18:08:12.546323 [debug] [MainThread]: On master: COMMIT
+[0m18:08:12.546323 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:08:12.563207 [debug] [MainThread]: SQL status: COMMIT in 0.009 seconds
+[0m18:08:12.563207 [debug] [MainThread]: On master: Close
+[0m18:08:12.563867 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:08:12.564406 [debug] [MainThread]: Connection 'list_nyc_taxi_bronze' was properly closed.
+[0m18:08:12.564406 [debug] [MainThread]: Connection 'test.nyc_pipeline.source_not_null_raw_yellow_trips_source_month.adff453d58' was properly closed.
+[0m18:08:12.564406 [info ] [MainThread]: 
+[0m18:08:12.564406 [info ] [MainThread]: Finished running 1 test in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[0m18:08:12.565706 [debug] [MainThread]: Command end result
+[0m18:08:12.586341 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\manifest.json
+[0m18:08:12.590206 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\semantic_manifest.json
+[0m18:08:12.593204 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\osi_document.json
+[0m18:08:12.598887 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\run_results.json
+[0m18:08:12.598887 [info ] [MainThread]: 
+[0m18:08:12.598887 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:08:12.599890 [info ] [MainThread]: 
+[0m18:08:12.599890 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+[0m18:08:12.600887 [debug] [MainThread]: Command `dbt test` succeeded at 18:08:12.600887 after 1.06 seconds
+[0m18:08:12.600887 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE284BB4A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE2B390530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CE2B520770>]}
+[0m18:08:12.600887 [debug] [MainThread]: Flushing usage events
+[0m18:08:13.844350 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:09:26.308085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0BE06510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0C3977D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0BE078C0>]}
+
+
+============================== 18:09:26.308085 | 07248735-8496-4d69-9114-2f6ccdf3b58a ==============================
+[0m18:09:26.308085 [info ] [MainThread]: Running with dbt=1.12.6
+[0m18:09:26.308085 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run --profiles-dir .', 'log_path': 'C:\\Users\\Admin\\Documents\\nyc-pipeline\\dbt_project\\logs'}
+[0m18:09:26.423524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '07248735-8496-4d69-9114-2f6ccdf3b58a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC09B702F0>]}
+[0m18:09:26.461837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '07248735-8496-4d69-9114-2f6ccdf3b58a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0E2E44D0>]}
+[0m18:09:26.464875 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:09:26.600397 [debug] [MainThread]: checksum: 04c854bd08887aac9be3ae808399a08db7cccb5addf5d4cdf280cf9505154b28, vars: {}, profile: nyc_pipeline, target: dev, version: 1.12.6
+[0m18:09:26.711549 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:09:26.711549 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m18:09:26.711549 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:09:26.720233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '07248735-8496-4d69-9114-2f6ccdf3b58a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0E3D5610>]}
+[0m18:09:26.805314 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\manifest.json
+[0m18:09:26.805314 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\semantic_manifest.json
+[0m18:09:26.828454 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\osi_document.json
+[0m18:09:26.834468 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '07248735-8496-4d69-9114-2f6ccdf3b58a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0E90F1D0>]}
+[0m18:09:26.834468 [info ] [MainThread]: Found 1 model, 1 test, 1 source, 478 macros
+[0m18:09:26.836218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07248735-8496-4d69-9114-2f6ccdf3b58a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0E4FEB10>]}
+[0m18:09:26.836218 [info ] [MainThread]: 
+[0m18:09:26.836218 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m18:09:26.836218 [info ] [MainThread]: 
+[0m18:09:26.836218 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:09:26.839046 [debug] [ThreadPool]: Acquiring new postgres connection 'list_nyc_taxi'
+[0m18:09:26.900965 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi"
+[0m18:09:26.900965 [debug] [ThreadPool]: On list_nyc_taxi: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "list_nyc_taxi"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:09:26.900965 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:09:26.918025 [debug] [ThreadPool]: SQL status: SELECT 8 in 0.017 seconds
+[0m18:09:26.918025 [debug] [ThreadPool]: On list_nyc_taxi: Close
+[0m18:09:26.918025 [debug] [ThreadPool]: Acquiring new postgres connection 'list_nyc_taxi_bronze'
+[0m18:09:26.927037 [debug] [ThreadPool]: Using postgres connection "list_nyc_taxi_bronze"
+[0m18:09:26.927037 [debug] [ThreadPool]: On list_nyc_taxi_bronze: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "list_nyc_taxi_bronze"} */
+select
+      'nyc_taxi' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'bronze'
+    union all
+    select
+      'nyc_taxi' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'bronze'
+    union all
+    select
+      'nyc_taxi' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'bronze'
+    union all
+    select distinct
+     'nyc_taxi' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'bronze'
+  
+[0m18:09:26.927037 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:09:26.957366 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.029 seconds
+[0m18:09:26.957366 [debug] [ThreadPool]: On list_nyc_taxi_bronze: ROLLBACK
+[0m18:09:26.957366 [debug] [ThreadPool]: On list_nyc_taxi_bronze: Close
+[0m18:09:26.957366 [debug] [MainThread]: Using postgres connection "master"
+[0m18:09:26.957366 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:09:26.957366 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:09:26.978319 [debug] [MainThread]: SQL status: SELECT 0 in 0.015 seconds
+[0m18:09:26.979316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '07248735-8496-4d69-9114-2f6ccdf3b58a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0E4FE000>]}
+[0m18:09:26.979316 [debug] [MainThread]: On master: ROLLBACK
+[0m18:09:26.980315 [debug] [MainThread]: On master: COMMIT
+[0m18:09:26.980315 [debug] [MainThread]: Using postgres connection "master"
+[0m18:09:26.980315 [debug] [MainThread]: On master: COMMIT
+[0m18:09:26.981928 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m18:09:26.981928 [debug] [MainThread]: On master: Close
+[0m18:09:26.981928 [debug] [Thread-1 (]: Began running node model.nyc_pipeline.bronze_yellow_trips
+[0m18:09:26.981928 [info ] [Thread-1 (]: 1 of 1 START sql incremental model bronze.bronze_yellow_trips .................. [RUN]
+[0m18:09:26.981928 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.nyc_pipeline.bronze_yellow_trips'
+[0m18:09:26.981928 [debug] [Thread-1 (]: Began compiling node model.nyc_pipeline.bronze_yellow_trips
+[0m18:09:26.991436 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:26.991436 [debug] [Thread-1 (]: Began executing node model.nyc_pipeline.bronze_yellow_trips
+[0m18:09:27.079161 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:27.079161 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "node_id": "model.nyc_pipeline.bronze_yellow_trips"} */
+
+    
+  
+    
+
+  create temporary table "bronze_yellow_trips__dbt_tmp180927064913"
+  
+  
+    as
+  
+  (
+    
+
+select
+    *,
+    'raw.yellow_trips'  as _source_table,
+    current_timestamp   as _ingested_at
+from "nyc_taxi"."raw"."yellow_trips"
+where source_month = '2024-01'
+  );
+  
+  
+[0m18:09:27.079161 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:09:29.555915 [debug] [Thread-1 (]: SQL status: SELECT 2964624 in 2.475 seconds
+[0m18:09:29.570307 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:29.571308 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "node_id": "model.nyc_pipeline.bronze_yellow_trips"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from INFORMATION_SCHEMA.columns
+      where table_name = 'bronze_yellow_trips__dbt_tmp180927064913'
+        
+      order by ordinal_position
+
+  
+[0m18:09:29.587547 [debug] [Thread-1 (]: SQL status: SELECT 23 in 0.016 seconds
+[0m18:09:29.593021 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:29.593550 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "node_id": "model.nyc_pipeline.bronze_yellow_trips"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "nyc_taxi".INFORMATION_SCHEMA.columns
+      where table_name = 'bronze_yellow_trips'
+        
+        and table_schema = 'bronze'
+        
+      order by ordinal_position
+
+  
+[0m18:09:29.598100 [debug] [Thread-1 (]: SQL status: SELECT 23 in 0.004 seconds
+[0m18:09:29.606798 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:29.606798 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "node_id": "model.nyc_pipeline.bronze_yellow_trips"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "nyc_taxi".INFORMATION_SCHEMA.columns
+      where table_name = 'bronze_yellow_trips'
+        
+        and table_schema = 'bronze'
+        
+      order by ordinal_position
+
+  
+[0m18:09:29.610345 [debug] [Thread-1 (]: SQL status: SELECT 23 in 0.002 seconds
+[0m18:09:29.620911 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:29.623827 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:29.624929 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "nyc_pipeline", "target_name": "dev", "node_id": "model.nyc_pipeline.bronze_yellow_trips"} */
+
+      
+        
+        
+        delete from "nyc_taxi"."bronze"."bronze_yellow_trips" as DBT_INTERNAL_DEST
+        where (source_month) in (
+            select distinct source_month
+            from "bronze_yellow_trips__dbt_tmp180927064913" as DBT_INTERNAL_SOURCE
+        );
+
+    
+
+    insert into "nyc_taxi"."bronze"."bronze_yellow_trips" ("vendorid", "tpep_pickup_datetime", "tpep_dropoff_datetime", "passenger_count", "trip_distance", "ratecodeid", "store_and_fwd_flag", "pulocationid", "dolocationid", "payment_type", "fare_amount", "extra", "mta_tax", "tip_amount", "tolls_amount", "improvement_surcharge", "total_amount", "congestion_surcharge", "airport_fee", "source_month", "loaded_at", "_source_table", "_ingested_at")
+    (
+        select "vendorid", "tpep_pickup_datetime", "tpep_dropoff_datetime", "passenger_count", "trip_distance", "ratecodeid", "store_and_fwd_flag", "pulocationid", "dolocationid", "payment_type", "fare_amount", "extra", "mta_tax", "tip_amount", "tolls_amount", "improvement_surcharge", "total_amount", "congestion_surcharge", "airport_fee", "source_month", "loaded_at", "_source_table", "_ingested_at"
+        from "bronze_yellow_trips__dbt_tmp180927064913"
+    )
+  
+[0m18:09:36.228834 [debug] [Thread-1 (]: SQL status: INSERT 0 2964624 in 6.605 seconds
+[0m18:09:36.239955 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: COMMIT
+[0m18:09:36.239955 [debug] [Thread-1 (]: Using postgres connection "model.nyc_pipeline.bronze_yellow_trips"
+[0m18:09:36.239955 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: COMMIT
+[0m18:09:36.239955 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m18:09:36.239955 [debug] [Thread-1 (]: On model.nyc_pipeline.bronze_yellow_trips: Close
+[0m18:09:36.250708 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '07248735-8496-4d69-9114-2f6ccdf3b58a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC09B4B4D0>]}
+[0m18:09:36.250708 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model bronze.bronze_yellow_trips ............. [[32mINSERT 0 2964624[0m in 9.27s]
+[0m18:09:36.250708 [debug] [Thread-1 (]: Finished running node model.nyc_pipeline.bronze_yellow_trips
+[0m18:09:36.250708 [debug] [MainThread]: On master: COMMIT
+[0m18:09:36.250708 [debug] [MainThread]: Using postgres connection "master"
+[0m18:09:36.250708 [debug] [MainThread]: On master: COMMIT
+[0m18:09:36.250708 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:09:36.279108 [debug] [MainThread]: SQL status: COMMIT in 0.024 seconds
+[0m18:09:36.279618 [debug] [MainThread]: On master: Close
+[0m18:09:36.279618 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:09:36.279618 [debug] [MainThread]: Connection 'list_nyc_taxi' was properly closed.
+[0m18:09:36.279618 [debug] [MainThread]: Connection 'list_nyc_taxi_bronze' was properly closed.
+[0m18:09:36.280623 [debug] [MainThread]: Connection 'model.nyc_pipeline.bronze_yellow_trips' was properly closed.
+[0m18:09:36.280623 [info ] [MainThread]: 
+[0m18:09:36.280623 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 9.44 seconds (9.44s).
+[0m18:09:36.281761 [debug] [MainThread]: Command end result
+[0m18:09:36.301696 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\manifest.json
+[0m18:09:36.301696 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\semantic_manifest.json
+[0m18:09:36.309793 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\osi_document.json
+[0m18:09:36.314794 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Admin\Documents\nyc-pipeline\dbt_project\target\run_results.json
+[0m18:09:36.314794 [info ] [MainThread]: 
+[0m18:09:36.314794 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:09:36.316263 [info ] [MainThread]: 
+[0m18:09:36.316263 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+[0m18:09:36.317632 [debug] [MainThread]: Command `dbt run` succeeded at 18:09:36.317632 after 10.50 seconds
+[0m18:09:36.317632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0C377680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0DF67410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DC0B8D0620>]}
+[0m18:09:36.317632 [debug] [MainThread]: Flushing usage events
+[0m18:09:37.705130 [debug] [MainThread]: An error was encountered while trying to flush usage events
