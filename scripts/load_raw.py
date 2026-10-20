@@ -5,10 +5,15 @@ import pyarrow as pa
 import pyarrow.csv as pacsv
 import pyarrow.parquet as pq
 import psycopg
+import os
 
 month = sys.argv[1]
 path = pathlib.Path("data/raw") / f"yellow_tripdata_{month}.parquet"
-CONN = "host=localhost port=5433 dbname=nyc_taxi user=admin password=admin"
+CONN = (
+    f"host={os.getenv('PG_HOST', 'localhost')} "
+    f"port={os.getenv('PG_PORT', '5433')} "
+    "dbname=nyc_taxi user=admin password=admin"
+)
 
 
 def pg_type(t):

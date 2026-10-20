@@ -3,8 +3,8 @@ nyc_pipeline:
   outputs:
     dev:
       type: postgres
-      host: localhost
-      port: 5433
+      host: "{{ env_var('PG_HOST', 'localhost') }}"
+      port: "{{ env_var('PG_PORT', '5433') | as_number }}"
       user: admin
       password: admin
       dbname: nyc_taxi

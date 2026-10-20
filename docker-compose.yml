@@ -16,5 +16,43 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+  airflow_db:
+    image: postgres:15
+    container_name: airflow_db
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - airflow_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow -d airflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  airflow:
+    build: ./docker/airflow
+    container_name: nyc_airflow
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow_db:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow_db/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      PG_HOST: postgres
+      PG_PORT: "5432"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./scripts:/opt/airflow/scripts
+      - ./dbt_project:/opt/airflow/dbt_project
+      - ./data:/opt/airflow/data
+    command: standalone
 volumes:
   pgdata:
+  airflow_pgdata:
