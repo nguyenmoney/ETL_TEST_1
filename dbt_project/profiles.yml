@@ -10,3 +10,18 @@ nyc_pipeline:
       dbname: nyc_taxi
       schema: public
       threads: 2
+    lake:
+      type: spark
+      method: session
+      host: NA
+      schema: silver
+      threads: 1
+      server_side_parameters:
+        spark.master: "local[2]"
+        spark.driver.memory: "2g"
+        spark.jars: "/home/airflow/jars/iceberg-spark-runtime-3.5_2.12-1.5.2.jar"
+        spark.sql.extensions: "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions"
+        spark.sql.catalog.lake: "org.apache.iceberg.spark.SparkCatalog"
+        spark.sql.catalog.lake.type: "hadoop"
+        spark.sql.catalog.lake.warehouse: "/opt/airflow/warehouse"
+        spark.sql.defaultCatalog: "lake"

@@ -12,3 +12,6 @@ models:
   nyc_pipeline:
     bronze:
       +schema: bronze
+    silver:
+      +schema: silver
+      

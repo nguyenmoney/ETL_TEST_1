@@ -1,0 +1,149 @@
+{
+  "format-version" : 2,
+  "table-uuid" : "e4276e73-746f-4b19-a408-4417a212787c",
+  "location" : "/opt/airflow/warehouse/silver/silver_yellow_trips",
+  "last-sequence-number" : 1,
+  "last-updated-ms" : 1792484438903,
+  "last-column-id" : 16,
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "trip_id",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 2,
+      "name" : "vendor_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 3,
+      "name" : "pickup_ts",
+      "required" : false,
+      "type" : "timestamptz"
+    }, {
+      "id" : 4,
+      "name" : "dropoff_ts",
+      "required" : false,
+      "type" : "timestamptz"
+    }, {
+      "id" : 5,
+      "name" : "passenger_count",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 6,
+      "name" : "trip_distance",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 7,
+      "name" : "pickup_zone_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 8,
+      "name" : "dropoff_zone_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 9,
+      "name" : "payment_type",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 10,
+      "name" : "fare_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 11,
+      "name" : "tip_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 12,
+      "name" : "total_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 13,
+      "name" : "reject_reasons",
+      "required" : false,
+      "type" : {
+        "type" : "list",
+        "element-id" : 16,
+        "element" : "string",
+        "element-required" : false
+      }
+    }, {
+      "id" : 14,
+      "name" : "is_valid",
+      "required" : false,
+      "type" : "boolean"
+    }, {
+      "id" : 15,
+      "name" : "source_month",
+      "required" : false,
+      "type" : "string"
+    } ]
+  } ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ {
+      "name" : "source_month",
+      "transform" : "identity",
+      "source-id" : 15,
+      "field-id" : 1000
+    } ]
+  } ],
+  "last-partition-id" : 1000,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "airflow",
+    "write.parquet.compression-codec" : "zstd"
+  },
+  "current-snapshot-id" : 3131329747418708777,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 3131329747418708777,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "sequence-number" : 1,
+    "snapshot-id" : 3131329747418708777,
+    "timestamp-ms" : 1792484438903,
+    "summary" : {
+      "operation" : "append",
+      "spark.app.id" : "local-1792484400827",
+      "added-data-files" : "1",
+      "added-records" : "2964624",
+      "added-files-size" : "107646567",
+      "changed-partition-count" : "1",
+      "total-records" : "2964624",
+      "total-files-size" : "107646567",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/opt/airflow/warehouse/silver/silver_yellow_trips/metadata/snap-3131329747418708777-1-0bd869c7-4c5b-4511-b635-941c9d2f6482.avro",
+    "schema-id" : 0
+  } ],
+  "statistics" : [ ],
+  "partition-statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1792484438903,
+    "snapshot-id" : 3131329747418708777
+  } ],
+  "metadata-log" : [ ]
+}

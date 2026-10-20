@@ -19,8 +19,8 @@ def nyc_taxi_pipeline():
     )
 
     load_raw = BashOperator(
-        task_id="load_raw",
-        bash_command="cd /opt/airflow && python scripts/load_raw.py {{ params.month }}",
+        task_id="spark_load_raw",
+        bash_command="cd /opt/airflow && python scripts/spark_load_raw.py {{ params.month }}",
     )
 
     dbt_run = BashOperator(

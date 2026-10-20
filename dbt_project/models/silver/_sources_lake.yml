@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: lake_bronze
+    schema: bronze
+    tables:
+      - name: yellow_trips
+      

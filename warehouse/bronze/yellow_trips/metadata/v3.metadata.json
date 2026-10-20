@@ -1,0 +1,240 @@
+{
+  "format-version" : 2,
+  "table-uuid" : "e1db98d7-dfe9-43ee-9435-7c96c12b288e",
+  "location" : "/opt/airflow/warehouse/bronze/yellow_trips",
+  "last-sequence-number" : 3,
+  "last-updated-ms" : 1792482568563,
+  "last-column-id" : 23,
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "vendorid",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 2,
+      "name" : "tpep_pickup_datetime",
+      "required" : false,
+      "type" : "timestamptz"
+    }, {
+      "id" : 3,
+      "name" : "tpep_dropoff_datetime",
+      "required" : false,
+      "type" : "timestamptz"
+    }, {
+      "id" : 4,
+      "name" : "passenger_count",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 5,
+      "name" : "trip_distance",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 6,
+      "name" : "ratecodeid",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 7,
+      "name" : "store_and_fwd_flag",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 8,
+      "name" : "pulocationid",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 9,
+      "name" : "dolocationid",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 10,
+      "name" : "payment_type",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 11,
+      "name" : "fare_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 12,
+      "name" : "extra",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 13,
+      "name" : "mta_tax",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 14,
+      "name" : "tip_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 15,
+      "name" : "tolls_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 16,
+      "name" : "improvement_surcharge",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 17,
+      "name" : "total_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 18,
+      "name" : "congestion_surcharge",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 19,
+      "name" : "airport_fee",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 20,
+      "name" : "source_month",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 21,
+      "name" : "loaded_at",
+      "required" : false,
+      "type" : "timestamptz"
+    }, {
+      "id" : 22,
+      "name" : "_source_table",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 23,
+      "name" : "_ingested_at",
+      "required" : false,
+      "type" : "timestamptz"
+    } ]
+  } ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ {
+      "name" : "source_month",
+      "transform" : "identity",
+      "source-id" : 20,
+      "field-id" : 1000
+    } ]
+  } ],
+  "last-partition-id" : 1000,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "airflow",
+    "write.parquet.compression-codec" : "zstd"
+  },
+  "current-snapshot-id" : 6350646285418653078,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 6350646285418653078,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "sequence-number" : 1,
+    "snapshot-id" : 4682585100036534177,
+    "timestamp-ms" : 1792482085167,
+    "summary" : {
+      "operation" : "append",
+      "spark.app.id" : "local-1792482072525",
+      "changed-partition-count" : "0",
+      "total-records" : "0",
+      "total-files-size" : "0",
+      "total-data-files" : "0",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/opt/airflow/warehouse/bronze/yellow_trips/metadata/snap-4682585100036534177-1-7941446d-e7e6-4c76-b423-d74fc84ab8da.avro",
+    "schema-id" : 0
+  }, {
+    "sequence-number" : 2,
+    "snapshot-id" : 1561478214185441437,
+    "parent-snapshot-id" : 4682585100036534177,
+    "timestamp-ms" : 1792482107177,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1792482072525",
+      "replace-partitions" : "true",
+      "added-data-files" : "1",
+      "added-records" : "2964624",
+      "added-files-size" : "46532102",
+      "changed-partition-count" : "1",
+      "total-records" : "2964624",
+      "total-files-size" : "46532102",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/opt/airflow/warehouse/bronze/yellow_trips/metadata/snap-1561478214185441437-1-1481580c-db71-4c27-9b3e-70569dec21a0.avro",
+    "schema-id" : 0
+  }, {
+    "sequence-number" : 3,
+    "snapshot-id" : 6350646285418653078,
+    "parent-snapshot-id" : 1561478214185441437,
+    "timestamp-ms" : 1792482568563,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1792482542346",
+      "replace-partitions" : "true",
+      "added-data-files" : "1",
+      "deleted-data-files" : "1",
+      "added-records" : "2964624",
+      "deleted-records" : "2964624",
+      "added-files-size" : "46532102",
+      "removed-files-size" : "46532102",
+      "changed-partition-count" : "1",
+      "total-records" : "2964624",
+      "total-files-size" : "46532102",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/opt/airflow/warehouse/bronze/yellow_trips/metadata/snap-6350646285418653078-1-07c14f77-4b96-4d5b-8361-6ea7c9482fa6.avro",
+    "schema-id" : 0
+  } ],
+  "statistics" : [ ],
+  "partition-statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1792482085167,
+    "snapshot-id" : 4682585100036534177
+  }, {
+    "timestamp-ms" : 1792482107177,
+    "snapshot-id" : 1561478214185441437
+  }, {
+    "timestamp-ms" : 1792482568563,
+    "snapshot-id" : 6350646285418653078
+  } ],
+  "metadata-log" : [ {
+    "timestamp-ms" : 1792482085167,
+    "metadata-file" : "/opt/airflow/warehouse/bronze/yellow_trips/metadata/v1.metadata.json"
+  }, {
+    "timestamp-ms" : 1792482107177,
+    "metadata-file" : "/opt/airflow/warehouse/bronze/yellow_trips/metadata/v2.metadata.json"
+  } ]
+}
